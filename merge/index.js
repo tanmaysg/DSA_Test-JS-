@@ -5,7 +5,21 @@
 // merge([1,5], [4,6,7]) === [1,4,5,6,7]
 // merge([4,6,7], [1,5]) === [1,4,5,6,7]
 
-function merge(sortedArr1, sortedArr2) {}
+function merge(sortedArr1, sortedArr2) {
+  var mergedArr= sortedArr1.concat(sortedArr2)
+
+  for(let i=0; i<mergedArr.length; i++){
+    for(let j=0; j<mergedArr.length-1; j++){
+      if(mergedArr[j]>mergedArr[j+1]){
+        var temp = mergedArr[j]
+        mergedArr[j]=mergedArr[j+1]
+        mergedArr[j+1]=temp
+      }
+    }
+  }
+
+  console.log(mergedArr)
+}
 
 
 

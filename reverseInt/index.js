@@ -7,7 +7,18 @@
 //   reverseInt(-13) === -31
 //   reverseInt(-100) === -1
 
-function reverseInt(n) {}
+function reverseInt(n) {
+  var reversed=n.toString().split('').reverse().join('')
+  reversed= parseInt(reversed)
+
+  if(n<0){
+    reversed=reversed*-1
+  }
+  return parseInt(reversed)
+
+}
+
+console.log(reverseInt(12345))
 
 
 

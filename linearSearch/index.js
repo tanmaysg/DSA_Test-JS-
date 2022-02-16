@@ -6,10 +6,15 @@
 // linearSearchIncludes(foods, "pizza") --> true
 // linearSearchFind(foods, food => food === "pizza") --> "pizza"
 
-function linearSearchIndexOf(arr, val) {}
+function linearSearchIndexOf(arr, val) {
+  for(let i=0; i<arr.length; i++){
+    if(arr[i]===val){
+      return i;
+    }
+  }
 
-
-function linearSearchFind(arr, cb) {}
+  return -1
+}
 
 
 
@@ -44,20 +49,6 @@ describe("linearSearchIndexOf()", () => {
 });
 
 
-describe.skip("linearSearchFind()", () => {
-  it("returns item back if found", () => {
-    const kevin = people[0];
-    assert.equal(
-      linearSearchFind(people, person => person.name === "Kevin"),
-      kevin
-    );
-  });
-  it("returns undefined if item NOT found", () => {
-    assert.equal(
-      linearSearchFind(people, person => person.name === "Kevinn"),
-      undefined
-    );
-  });
-});
+
 
 mocha.run();
